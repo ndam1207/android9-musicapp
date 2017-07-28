@@ -16,4 +16,8 @@ public class OnTopSongClick {
     public TopSongModel getTopSongModel() {
         return topSongModel;
     }
+
+    public void setTopSongModel(TopSongModel topSongModel) {
+        this.topSongModel = topSongModel;
+    }
 }

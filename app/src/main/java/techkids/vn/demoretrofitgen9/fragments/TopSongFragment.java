@@ -133,9 +133,9 @@ public class TopSongFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         TopSongModel topSongModel = (TopSongModel) v.getTag();
 
-        EventBus.getDefault().post(new OnTopSongClick(topSongModel));
+        EventBus.getDefault().postSticky(new OnTopSongClick(topSongModel));
 
         ScreenManager.openFragment(getActivity().getSupportFragmentManager(),
-                new MainPlayerFragment(), R.id.layout_main_player);
+                new MainPlayerFragment(), R.id.layout_container);
     }
 }

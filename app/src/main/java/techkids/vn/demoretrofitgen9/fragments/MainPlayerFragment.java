@@ -66,8 +66,8 @@ public class MainPlayerFragment extends Fragment implements OnClickListener {
     }
 
     private void setupUI(View view) {
-        EventBus.getDefault().register(this);
         ButterKnife.bind(this, view);
+        EventBus.getDefault().register(this);
 
         ivClose.setOnClickListener(new OnClickListener() {
             @Override
