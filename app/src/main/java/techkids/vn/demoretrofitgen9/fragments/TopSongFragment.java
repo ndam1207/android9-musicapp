@@ -33,6 +33,7 @@ import techkids.vn.demoretrofitgen9.databases.TopSongModel;
 import techkids.vn.demoretrofitgen9.events.OnClickMusicType;
 import techkids.vn.demoretrofitgen9.events.OnTopSongClick;
 import techkids.vn.demoretrofitgen9.managers.MusicManager;
+import techkids.vn.demoretrofitgen9.managers.ScreenManager;
 import techkids.vn.demoretrofitgen9.networks.GetTopSongsService;
 import techkids.vn.demoretrofitgen9.networks.RetrofitFactory;
 import techkids.vn.demoretrofitgen9.networks.json_models.top_songs.FeedJSON;
@@ -133,5 +134,8 @@ public class TopSongFragment extends Fragment implements View.OnClickListener {
         TopSongModel topSongModel = (TopSongModel) v.getTag();
 
         EventBus.getDefault().post(new OnTopSongClick(topSongModel));
+
+        ScreenManager.openFragment(getActivity().getSupportFragmentManager(),
+                new MainPlayerFragment(), R.id.layout_main_player);
     }
 }

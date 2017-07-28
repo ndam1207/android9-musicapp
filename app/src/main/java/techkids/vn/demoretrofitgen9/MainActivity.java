@@ -110,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe
     public void onClickTopSong(OnTopSongClick onTopSongClick) {
         TopSongModel topSongModel = onTopSongClick.getTopSongModel();
-        rlMiniPlayer.setVisibility(View.VISIBLE);
+        rlMiniPlayer.setVisibility(View.INVISIBLE);
+
 
         tvSongMiniPlayer.setText(topSongModel.getSongName());
         tvSingerMiniPlayer.setText(topSongModel.getSingerName());
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                 .transform(new CropCircleTransformation())
                 .into(ivImageSongMiniPlayer);
 
-        MusicManager.loadSearchSong(topSongModel, this, sbMiniPlayer, fbPlayMiniPlayer);
+//        MusicManager.loadSearchSong(topSongModel, this, sbMiniPlayer, fbPlayMiniPlayer);
 
     }
 }
